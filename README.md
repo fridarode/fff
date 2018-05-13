@@ -22,3 +22,23 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+require 'net/http/persistent'
+
+uri = URI 'http://example.com/awesome/web/service'
+
+http = Net::HTTP::Persistent.new 'my_app_name'
+
+# perform a GET
+response = http.request uri
+
+# create a POST
+post_uri = uri + 'create'
+post = Net::HTTP::Post.new post_uri.path
+post.set_form_data 'some' => 'cool data'
+
+# perform the POST, the URI is always required
+response = http.request post_uri, post
+
+# if you are done making http requests, or won't make requests for several
+# minutes
+http.shutdown

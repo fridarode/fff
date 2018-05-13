@@ -1,2 +1,14 @@
-<h1>Favorites#index</h1>
-<p>Find me in app/views/favorites/index.html.erb</p>
+<h1>Favorites</h1>
+<p>Search local menus, then use sidebar to search stains available.  Save your favorite choices.</p>
+<%="Strain names and hidden field link to save in db"%>
+<p>Everyone is born with natural Cannabinoid <a href="https://www.ncbi.nlm.nih.gov/m/pubmed/9472392/" target="_blank">Brain</a> receptors.</p>
+
+  <div class="local-menus">
+    <p id="menu">See Menu</p>
+    <div id="menu-links" >
+      <p><a href="https://keystoneshops.com/locations/devon/" target="_blank">Devon</a></p><br>
+      <p><a href="https://www.terravidahc.com/abington-menu/" target="_blank">Abington</a></p>
+    </div>
+  </div>
+  <%=link_to "Add New Favorite", new_favorite_path%>
+  <%=link_to "See Favorites", favorites_path%>

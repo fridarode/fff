@@ -1,2 +1,17 @@
 <h1>Favorites#new</h1>
-<p>Find me in app/views/favorites/new.html.erb</p>
+<p>Add Favorite</p>
+<%=form_for :favorite, url: favorites_path, method: :post do |form| %>
+<div class="field">
+  <%=form.label :strain%>
+  <%=form.text_field :strain%>
+</div>
+<div class="field">
+  <%=form.label :comment%>
+  <%=form.text_field :comment%>
+</div>
+<div class="action">
+  <%=form.submit "New Favorite"%>
+</div>
+<%end%>
+
+<%= link_to 'Back', favorites_path %>

@@ -1,2 +1,9 @@
-<h1>Favorites#show</h1>
-<p>Find me in app/views/favorites/show.html.erb</p>
+<h1>Favorites show</h1>
+<p>Showing Your Picks</p>
+<%=@favorite.each do |el|%>
+<div class="display">
+  <%=@favorite.each do |el|%>
+    <p><%=el.strain%></p>
+    <p><%=el.comment%></p>
+  <%end%>
+</div>

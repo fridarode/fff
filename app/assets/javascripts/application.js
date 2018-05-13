@@ -13,4 +13,20 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
+//= require_tree
+//= require jquery
+//= require rest-client
+
+
+// function weed() {
+// const apikey = '1bce534a28b2525634033e2e5dba639414801ff0';
+// const url = 'https://api.otreeba.com/v1/strains/';
+// fetch(url, {apikey }).then(response => {
+//   if(response.ok){
+//     return response.json();
+//   }
+//   throw new Error('Request Failed!');
+// }, networkError => console.log(networkError.message)).then(jsonResponse => {
+//   return jsonResponse;
+// })
+// };
