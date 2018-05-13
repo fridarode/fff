@@ -15,7 +15,7 @@
 //= require turbolinks
 //= require_tree
 //= require jquery
-//= require rest-client
+
 
 
 // function weed() {
