@@ -10,23 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //= require_tree
-//= require jquery
-
-
-
-// function weed() {
-// const apikey = '1bce534a28b2525634033e2e5dba639414801ff0';
-// const url = 'https://api.otreeba.com/v1/strains/';
-// fetch(url, {apikey }).then(response => {
-//   if(response.ok){
-//     return response.json();
-//   }
-//   throw new Error('Request Failed!');
-// }, networkError => console.log(networkError.message)).then(jsonResponse => {
-//   return jsonResponse;
-// })
-// };
