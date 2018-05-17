@@ -1,32 +1,32 @@
-$(document).on('turbolinks:load', () => {
-
- weed();
-});
-
+// $(document).on('turbolinks:load', () => {
 //
-// $('#menu').click((event) => {
-//   $('#menu-links').toggleSlide('slow');
+//  // weed();
 // });
-var data = {};
-
-function weed() {
-  fetch('https://api.otreeba.com/v1/strains?count=50&sort=name')
-    .then(function(response) {
-      data = response.json();
-      console.log(data);
-
-     //  data.forEach(function(seed) {
-     //   $('.strain').append(seed.name);
-     //   console.log(seed.name);
-     // });
-
-    }).catch(function(err) {
-    	console.log(err);
-  })
+//
+// //
+// // $('#menu').click((event) => {
+// //   $('#menu-links').toggleSlide('slow');
+// // });
+// // var data = {};
+//
+// function weed() {
+//   fetch('https://api.otreeba.com/v1/strains?count=50&sort=name')
+//     .then(function(response) {
+//       data = response.json();
+//       console.log(data);
+//
+//      //  data.forEach(function(seed) {
+//      //   $('.strain').append(seed.name);
+//      //   console.log(seed.name);
+//      // });
+//
+//     }).catch(function(err) {
+//     	console.log(err);
+//   })
    //  data.forEach(function(seed) {
    //   $('.strain').text(seed.name);
    // });
-};
+// };
 
 
 

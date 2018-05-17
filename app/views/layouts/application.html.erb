@@ -18,20 +18,45 @@
         <%end%>
       </nav>
     </header>
-    <div class="jumbotron">
-      <!-- <script>
+    <div class="joint">
+      <!-- data.data is the array -->
+      <script>
          var div = document.getElementById("data");
          var data;
+         var dataArr;
+
          var sendApi = function(){
            var myRequest = new Request("https://api.otreeba.com/v1/strains?count=50&sort=name");
            fetch(myRequest).then(function(response){
              return response.json();
            }).then(function(myJson){
              data = myJson;
+             dataArr = data.data;
+             console.log(dataArr);
+
+              // $('.strain').text(dataArr[6].name);
+              // $('.img').attr('src', dataArr[6].image).css({
+              //   width: '100px',
+              //   height: '100px'
+              // });
+              // $('.strain').text(dataArr[5].name);
+
+
+
+                dataArr.forEach( function(seed) {
+                let freshy =  `<h2>"${seed.name}"</h2>
+                  <p><a href="${seed.url}">Info
+                  </a></p>
+                  <img src="${seed.image}" alt="Weed!"/>`;
+
+
+                 $('.list').append(freshy);
+                })
            })
          };
          sendApi();
-      </script> -->
+
+      </script>
        <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
     <%= yield %>

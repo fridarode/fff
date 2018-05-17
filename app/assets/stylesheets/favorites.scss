@@ -10,24 +10,17 @@ body {
 
 }
 
-.jumbotron {
-  width: 95vw;
-  height: 95vh;
+.joint {
+  width: 100vw;
+  height: 100vh;
   background-image: image-url("weed.jpeg");
   background-position: center;
   background-size: cover;
 }
 
-.container {
-display: grid;
-width: 100vw;
-height: 100vh;
 
 
-}
-
-#menu-links {
-  display: hidden;
-  width: 33vw;
-  height: 33vh;
+img {
+  width: 100px;
+  height: 100px;
 }
