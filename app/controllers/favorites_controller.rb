@@ -1,7 +1,7 @@
 class FavoritesController < ApplicationController
   def index
     @favorites = Favorite.all
-    
+
   end
 
   def new
@@ -33,6 +33,7 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
+    
   end
 
   private
