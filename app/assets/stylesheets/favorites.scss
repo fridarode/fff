@@ -7,18 +7,15 @@
 }
 
 body {
-
-}
-
-.joint {
-  width: 100vw;
-  height: 100vh;
+  background-attachment: fixed;
   background-image: image-url("weed.jpeg");
   background-position: center;
   background-size: cover;
 }
 
-
+a {
+  color: red;
+}
 
 img {
   width: 100px;
