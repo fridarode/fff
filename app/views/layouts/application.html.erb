@@ -15,6 +15,8 @@
         <%if current_user%>
         <%=link_to "Main Page", favorites_path%>
         <%=link_to "New Favorite", new_favorite_path%>
+        <%=link_to "See Favorites", user_path(current_user)%>
+        <%=link_to 'SIGN OUT', destroy_user_session_path, method: :delete%>
         <%end%>
       </nav>
     </header>
@@ -34,21 +36,12 @@
              dataArr = data.data;
              console.log(dataArr);
 
-              // $('.strain').text(dataArr[6].name);
-              // $('.img').attr('src', dataArr[6].image).css({
-              //   width: '100px',
-              //   height: '100px'
-              // });
-              // $('.strain').text(dataArr[5].name);
-
-
-
                 dataArr.forEach( function(seed) {
-                let freshy =  `<h2>"${seed.name}"</h2>
-                  <p><a href="${seed.url}">Info
+                let freshy =  `<h2 data-strain="${seed.name}">"${seed.name}"</h2>
+                  <p><a href="${seed.url}" target="_blank">${seed.name} Info
                   </a></p>
-                  <img src="${seed.image}" alt="Weed!"/>`;
-
+                  <img src="${seed.image}" alt="Weed!"/>
+                  `;
 
                  $('.list').append(freshy);
                 })
@@ -57,10 +50,10 @@
          sendApi();
 
       </script>
+
        <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
     <%= yield %>
-    <%=link_to 'SIGN OUT', destroy_user_session_path, method: :delete%>
     </div>
   </body>
 </html>

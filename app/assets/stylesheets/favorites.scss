@@ -11,13 +11,39 @@ body {
   background-image: image-url("weed.jpeg");
   background-position: center;
   background-size: cover;
+  margin: 20px;
 }
 
 a {
   color: red;
 }
 
+p {
+  font-size: 25px;
+}
+
 img {
   width: 100px;
   height: 100px;
+}
+
+.joint {
+  color: blue;
+}
+
+.local-menus {
+  width: 300px;
+  display: grid;
+  justify-content: center;
+
+}
+
+.new-form {
+  display: none;
+  width: 380px;
+  height: 420px;
+  background-color: lightgray;
+  color: midnightblue;
+  position: fixed;
+
 }

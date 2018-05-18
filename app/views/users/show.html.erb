@@ -1,0 +1,7 @@
+<h1>Your Favorites</h1>
+<div class="display">
+  <%@favorites.each do |el|%>
+    <p><%=el.strain%></p>
+    <p><%=el.comment%></p>
+  <%end%>
+</div>

@@ -4,17 +4,40 @@
   <p>This site is ultimately trying to give user the ability to search Strain names like the great Leafly app and mixin the ability to view daily local dispenaries selections menus. Then save your shopping list in Favorites with a comment.</p>
   <p>Everyone is born with natural Cannabinoid <a href="https://www.ncbi.nlm.nih.gov/m/pubmed/9472392/" target="_blank">Brain</a> receptors.</p>
 </header>
+  <div class="row">
+    <div class="new-form", "col-sm-6-right">
+      <h1>Favorites</h1>
+      <p>Add Favorite</p>
+      <%=form_for :favorite, url: favorites_path, method: :post do |form| %>
+      <div class="field">
+        <%=form.label :strain%>
+        <%=form.text_field :strain%>
+      </div>
+      <div class="field">
+        <%=form.label :comment%>
+        <%=form.text_field :comment%>
+      </div>
+      <div class="action">
+        <%=form.submit "New Favorite"%>
+      </div>
+      <%end%>
+      <%= link_to 'Back', favorites_path %>
+   </div>
 
 
-  <div class="local-menus">
-    <p id="menu">See Menu</p>
-    <div id="menu-links" >
-      <p><a href="https://keystoneshops.com/locations/devon/" target="_blank">Devon</a></p><br>
-      <p><a href="https://www.terravidahc.com/abington-menu/" target="_blank">Abington</a></p>
+   <p class="form">ADD</p>
+   <div class="add">
+     <script type="text/javascript">
+       $('.form').click((event) => {
+       $('.new-form').toggle('slow');
+         });
+     </script>
+   </div>
+    <div class="local-menus", "col-sm-4">
+     <p id="menu">See Local Menu's</p>
+        <p><a href="https://keystoneshops.com/locations/devon/" target="_blank">Devon</a></p><br>
+        <p><a href="https://www.terravidahc.com/abington-menu/" target="_blank">Abington</a></p>
+    </div>
+    <div class="list", "col-sm-4-left">
     </div>
   </div>
-  <div class="list">
-
-  </div>
-  <%=link_to "Add New Favorite", new_favorite_path%>
-  <%=link_to "See Favorites", favorites_path%>

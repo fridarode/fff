@@ -13,10 +13,12 @@
 ActiveRecord::Schema.define(version: 2018_05_09_164014) do
 
   create_table "favorites", force: :cascade do |t|
+    t.integer "user_id"
     t.string "strain"
     t.string "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

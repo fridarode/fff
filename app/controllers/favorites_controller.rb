@@ -11,7 +11,8 @@ class FavoritesController < ApplicationController
 
   def create
     @favorite = Favorite.new(fav_params)
-    @favorite.user_id = Favorite.find(params[:id])
+    @favorite.user_id = current_user.id
+
     if @favorite.save
       redirect_to favorite_path @favorite
     else
@@ -22,6 +23,7 @@ class FavoritesController < ApplicationController
 
   def show
     @favorite = Favorite.find(params[:id])
+    # @favorite = @favorites.all
   end
 
   def edit
@@ -33,7 +35,7 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    
+
   end
 
   private
