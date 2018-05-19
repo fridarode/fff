@@ -10,15 +10,33 @@
   </head>
 
   <body>
-    <header>
-      <nav>
-        <%if current_user%>
-        <%=link_to "Main Page", favorites_path%>
-        <%=link_to "New Favorite", new_favorite_path%>
-        <%=link_to "See Favorites", user_path(current_user)%>
-        <%=link_to 'SIGN OUT', destroy_user_session_path, method: :delete%>
-        <%end%>
+    <header class-"container">
+      <%if current_user%>
+      <nav class="navbar bg-primary ">
+        <div class="container ">
+          <div class="navbar-nav text-success d-inline nav-expand">
+            <%=link_to "Main Page", favorites_path%></b>
+            <%=link_to "New Favorite", new_favorite_path%>
+            <%=link_to "See Favorites", user_path(current_user)%>
+            <%=link_to 'SIGN OUT', destroy_user_session_path, method: :delete%>
+         </div>
+         <button class="form btn btn-lg btn-danger">Show Form</button>
+         <span class="navbar-text">Click on ADD for add form</span>
+         <form class="form-inline" >
+           <input class-"form-control" type="text" name="" placeholder="search">
+           <button class="btn btn-outline-warning" type="submit" name="button">Buzz</button>
+         </form>
+         <div class="btn-lg">
+           <script type="text/javascript">
+             $('.form').click((event) => {
+             $('.new-form').toggle('slow');
+               });
+           </script>
+         </div>
+        </div>
       </nav>
+
+      <%end%>
     </header>
     <div class="joint">
       <!-- data.data is the array -->
@@ -40,7 +58,7 @@
                 let freshy =  `<h2 data-strain="${seed.name}">"${seed.name}"</h2>
                   <p><a href="${seed.url}" target="_blank">${seed.name} Info
                   </a></p>
-                  <img src="${seed.image}" alt="Weed!"/>
+                  <img src="${seed.image}" class="img-thumbnail rounded-circle" alt="Weed!"/>
                   `;
 
                  $('.list').append(freshy);

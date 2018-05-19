@@ -15,7 +15,7 @@ body {
 }
 
 a {
-  color: red;
+  color: orange;
 }
 
 p {
@@ -28,15 +28,11 @@ img {
 }
 
 .joint {
+
   color: blue;
 }
 
-.local-menus {
-  width: 300px;
-  display: grid;
-  justify-content: center;
 
-}
 
 .new-form {
   display: none;
@@ -44,6 +40,6 @@ img {
   height: 420px;
   background-color: lightgray;
   color: midnightblue;
-  position: fixed;
+  // position: fixed;
 
 }
