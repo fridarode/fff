@@ -18,26 +18,26 @@
            <button class="btn btn-lg btn-dark" type="button" name="button">    <%=link_to "Main Page", favorites_path%></button>
            <button class="btn btn-lg btn-success" type="button" name="button"><%=link_to "New Favorite", new_favorite_path%></button>
            <button class="btn btn-lg btn-warning" type="button" name="button"><%=link_to "See Favorites", user_path(current_user)%></button>
+           <button class="form btn btn-lg btn-outline-danger">Show Form</button>
            <button class="btn btn-lg btn-danger" type="button" name="button"><%=link_to 'SIGN OUT', destroy_user_session_path, method: :delete%></button>
-          </div>
-         <button class="form btn btn-lg btn-outline-danger">Show Form</button>
-         <!-- <span class="navbar-text">Click on ADD for add form</span> -->
-         <form class="form-inline" >
-           <input class-"form-control" type="text" name="" placeholder="search">
-           <button class="btn btn-outline-warning" type="submit" name="button">Buzz</button>
-         </form>
-         <div class="btn-lg">
-           <script type="text/javascript">
-             $('.form').click((event) => {
-             $('.new-form').toggle('slow');
-               });
-           </script>
+        </div>
+
+         <div class="container bg-primary">
+           <div class="dropdown">
+            <button class="btn btn-lg dropdown-toggle btn-danger" type="button">Local Shops</button>
+            <div class="dropdown-menu">
+              <div class='dropdown-header  text-center text-danger'>See Local Menu's</div>
+               <a class="dropdown-item" href="https://keystoneshops.com/locations/devon/" target="_blank">Devon</a>
+              <a class="dropdown-item"  href="https://www.terravidahc.com/abington-menu/" target="_blank">Abington</a>
+             </div>
+           </div>
          </div>
+         <!-- dropdown-menu -->
         </div>
       </nav>
-
       <%end%>
     </header>
+
     <div class="joint">
       <!-- data.data is the array -->
       <script>
@@ -56,15 +56,15 @@
 
                 dataArr.forEach( function(seed) {
                     let freshy =`
-                    <section class="card bg-secondary w-50 text-light" >
+                    <section class="card bg-secondary w-50 mb-3 border-danger" >
                       <div class="card-body">
                       <img src="${seed.image}" class="img-thumbnail img-fluid rounded-circle" alt="Weed!"/>
-                      <h2 class="card-title">
+                      <h2 class="card-title text-info">
                         "${seed.name}"
                       </h2>
-                      <h5 class="card-subtitle">
 
-                      </h5>
+                       <button class="form btn btn-lg btn-outline-success">Save with hidden field</button>
+
                       <button class="btn btn-lg btn-warning"><a href="${seed.url}" target="_blank">${seed.name} Info
                       </a></button>
 
@@ -72,15 +72,11 @@
                     </section>
                     `;
 
-
-
-
                  $('.list').append(freshy);
                 })
            })
          };
          sendApi();
-
       </script>
 
        <p class="notice"><%= notice %></p>

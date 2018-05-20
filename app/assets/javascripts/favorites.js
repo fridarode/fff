@@ -44,3 +44,6 @@
 //   return jsonResponse;
 // })
 // };
+// $('.form').click((event) => {
+// $('.new-form').toggle('slow');
+//   });

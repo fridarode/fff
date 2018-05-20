@@ -1,7 +1,13 @@
 <h1>Your Favorites</h1>
-<div class="display">
-  <%@favorites.each do |el|%>
-    <p><%=el.strain%></p>
-    <p><%=el.comment%></p>
-  <%end%>
+<div class="container">
+  <div class="row bg-white">
+    <%@favorites.each do |el|%>
+      <div class="col-6">
+        <p><%=el.strain%></p>
+      </div>
+      <div class="col-6">
+        <p><%=el.comment%></p>
+      </div>
+    <%end%>
+  </div>
 </div>
