@@ -9,19 +9,19 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <header class-"container">
+  <body class="bg-success">
+    <header class="container">
       <%if current_user%>
-      <nav class="navbar bg-primary ">
+      <nav class="navbar bg-secondary ">
         <div class="container ">
           <div class="navbar-nav text-success d-inline nav-expand">
-            <%=link_to "Main Page", favorites_path%></b>
-            <%=link_to "New Favorite", new_favorite_path%>
-            <%=link_to "See Favorites", user_path(current_user)%>
-            <%=link_to 'SIGN OUT', destroy_user_session_path, method: :delete%>
-         </div>
-         <button class="form btn btn-lg btn-danger">Show Form</button>
-         <span class="navbar-text">Click on ADD for add form</span>
+           <button class="btn btn-lg btn-dark" type="button" name="button">    <%=link_to "Main Page", favorites_path%></button>
+           <button class="btn btn-lg btn-success" type="button" name="button"><%=link_to "New Favorite", new_favorite_path%></button>
+           <button class="btn btn-lg btn-warning" type="button" name="button"><%=link_to "See Favorites", user_path(current_user)%></button>
+           <button class="btn btn-lg btn-danger" type="button" name="button"><%=link_to 'SIGN OUT', destroy_user_session_path, method: :delete%></button>
+          </div>
+         <button class="form btn btn-lg btn-outline-danger">Show Form</button>
+         <!-- <span class="navbar-text">Click on ADD for add form</span> -->
          <form class="form-inline" >
            <input class-"form-control" type="text" name="" placeholder="search">
            <button class="btn btn-outline-warning" type="submit" name="button">Buzz</button>
@@ -55,11 +55,25 @@
              console.log(dataArr);
 
                 dataArr.forEach( function(seed) {
-                let freshy =  `<h2 data-strain="${seed.name}">"${seed.name}"</h2>
-                  <p><a href="${seed.url}" target="_blank">${seed.name} Info
-                  </a></p>
-                  <img src="${seed.image}" class="img-thumbnail rounded-circle" alt="Weed!"/>
-                  `;
+                    let freshy =`
+                    <section class="card bg-secondary w-50 text-light" >
+                      <div class="card-body">
+                      <img src="${seed.image}" class="img-thumbnail img-fluid rounded-circle" alt="Weed!"/>
+                      <h2 class="card-title">
+                        "${seed.name}"
+                      </h2>
+                      <h5 class="card-subtitle">
+
+                      </h5>
+                      <button class="btn btn-lg btn-warning"><a href="${seed.url}" target="_blank">${seed.name} Info
+                      </a></button>
+
+                      </div>
+                    </section>
+                    `;
+
+
+
 
                  $('.list').append(freshy);
                 })
