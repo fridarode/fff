@@ -1,2 +1,11 @@
 <h1>Favorites#edit</h1>
-<p>Find me in app/views/favorites/edit.html.erb</p>
+<p>Edit</p>
+<h1>Edit Fav</h1>
+<%= form_for @favorite, method: :put do |f| %>
+<p>
+<%=f.text_field :strain, value: @favorite.strain, class: "form-control"%><br>
+<%=f.text_area :content, value: @favorite.comment, class: "form-control"%><br>
+
+<%=f.submit "Submit"%>
+</p>
+<%end%>

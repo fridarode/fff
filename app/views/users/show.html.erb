@@ -11,3 +11,7 @@
     <%end%>
   </div>
 </div>
+<div class="container bg-warning">
+<button class="btn btn-lg btn-secondary" type="button" name="button"><%= link_to 'Edit Fav', edit_favorite_path(current_user.id) %></button>
+<button class="btn btn-lg btn-danger" type="button" name="button"><%= link_to 'Delete Fav', favorite_path(current_user.id), method: :delete %></button>
+</div>

@@ -47,3 +47,10 @@
 // $('.form').click((event) => {
 // $('.new-form').toggle('slow');
 //   });
+//                   <div class="actions">
+// <%= form_for :favorite, url: favorites_path, method: :post do |form| %>
+//   <%= form.hidden_field :strain, value: seed.name %>
+//
+//     <%= form.submit "Add to Favorites" %>
+//   </div>
+//   <% end %>

@@ -14,11 +14,12 @@
       <%if current_user%>
       <nav class="navbar bg-secondary ">
         <div class="container ">
-          <div class="navbar-nav text-success d-inline nav-expand">
+          <img class="navbar-brand img-thumbnail" src="/weed.jpeg"  alt="Weed!">
+          <div class="navbar-nav text-succes s d-inline nav-expand">
            <button class="btn btn-lg btn-dark" type="button" name="button">    <%=link_to "Main Page", favorites_path%></button>
            <button class="btn btn-lg btn-success" type="button" name="button"><%=link_to "New Favorite", new_favorite_path%></button>
            <button class="btn btn-lg btn-warning" type="button" name="button"><%=link_to "See Favorites", user_path(current_user)%></button>
-           <button class="form btn btn-lg btn-outline-danger">Show Form</button>
+           <!-- <button class="form btn btn-lg btn-outline-danger">Show Form</button> -->
            <button class="btn btn-lg btn-danger" type="button" name="button"><%=link_to 'SIGN OUT', destroy_user_session_path, method: :delete%></button>
         </div>
 
@@ -58,12 +59,19 @@
                     let freshy =`
                     <section class="card bg-secondary w-50 mb-3 border-danger" >
                       <div class="card-body">
-                      <img src="${seed.image}" class="img-thumbnail img-fluid rounded-circle" alt="Weed!"/>
+                      <img src="${seed.image}" class="card-img img-thumbnail img-fluid rounded-circle" alt="Weed!"/>
                       <h2 class="card-title text-info">
                         "${seed.name}"
                       </h2>
 
-                       <button class="form btn btn-lg btn-outline-success">Save with hidden field</button>
+                      <form  action="/favorites" method="post">
+                      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+                        <input class="form-control" type="hidden" name="favorite[strain]" value="${seed.name}">
+                        </input>
+                        <input class="form-control" type="hidden" name="favorite[comment]" value="${seed.image}">
+                        </input>
+                          <button class="btn btn-lg btn-outline-success" type="submit">Save with hidden field</button>
+                      </form>
 
                       <button class="btn btn-lg btn-warning"><a href="${seed.url}" target="_blank">${seed.name} Info
                       </a></button>
