@@ -12,15 +12,14 @@
   <body class="bg-success">
     <header class="container">
       <%if current_user%>
-      <nav class="navbar bg-secondary ">
+      <nav class="navbar bg-info ">
         <div class="container ">
-          <img class="navbar-brand img-thumbnail" src="/weed.jpeg"  alt="Weed!">
-          <div class="navbar-nav text-success d-inline nav-expand">
-           <button class="btn btn-lg btn-dark" type="button" name="button">    <%=link_to "Main Page", favorites_path%></button>
-           <button class="btn btn-lg btn-success" type="button" name="button"><%=link_to "New Favorite", new_favorite_path%></button>
-           <button class="btn btn-lg btn-warning" type="button" name="button"><%=link_to "See Favorites", user_path(current_user)%></button>
-           <!-- <button class="form btn btn-lg btn-outline-danger">Show Form</button> -->
-           <button class="btn btn-lg btn-danger" type="button" name="button"><%=link_to 'SIGN OUT', destroy_user_session_path, method: :delete%></button>
+          <img class="navbar-brand img-thumbnail rounded-circle border-danger" src="https://www.cannabisreports.com/images/strains/3/full_39c653b396a61321bc7127c3f89b40eb23cd771a.jpg"  alt="Weed!">
+          <div class="navbar-nav d-inline nav-expand">
+           <button class="btn btn-lg bg-white btn-outline-dark" type="button" name="button"><%=link_to "Main Page", favorites_path%></button>
+           <button class="btn btn-lg bg-success btn-outline-dark" type="button" name="button"><%=link_to "New Favorite", new_favorite_path%></button>
+           <button class="btn btn-lg bg-warning btn-outline-dark" type="button" name="button"><%=link_to "See Favorites", user_path(current_user)%></button>
+           <button class="btn btn-lg bg-danger btn-outline-dark" type="button" name="button"><%=link_to 'SIGN OUT', destroy_user_session_path, method: :delete%></button>
         </div>
 
          <div class="container bg-primary">
@@ -57,10 +56,10 @@
 
                 dataArr.forEach( function(seed) {
                     let freshy =`
-                    <section class="card bg-secondary w-50 mb-3 border-danger" >
+                    <section class="card bg-danger w-50 mb-3 border-white" >
                       <div class="card-body">
-                      <img src="${seed.image}" class="card-img img-thumbnail img-fluid rounded-circle" alt="Weed!"/>
-                      <h2 class="card-title text-info">
+                      <img src="${seed.image}" class="card-img img-thumbnail img-fluid rounded-circle border-danger" alt="Weed!"/>
+                      <h2 class="card-title text-primary">
                         "${seed.name}"
                       </h2>
 
@@ -70,7 +69,7 @@
                         </input>
                         <input class="form-control" type="hidden" name="favorite[comment]" value="${seed.image}">
                         </input>
-                          <button class="btn btn-lg btn-outline-success" type="submit">Save with hidden field</button>
+                          <button class="btn btn-lg btn-success active" type="submit">Save with hidden field</button>
                       </form>
 
                       <button class="btn btn-lg btn-warning"><a href="${seed.url}" target="_blank">${seed.name} Info
