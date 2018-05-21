@@ -5,8 +5,11 @@
   <p><%=@favorite.strain%></p>
   <p><%=@favorite.comment%></p>
 </div>
-<!-- <span class="navbar-text">Click on ADD for add form</span> -->
-<!-- <form class="form-inline" >
-  <input class-"form-control" type="text" name="" placeholder="search">
-  <button class="btn btn-outline-warning" type="submit" name="button">Buzz</button>
-</form> -->
+<section class="card bg-secondary w-50 mb-3 border-danger">
+  <div class="card-body">
+  <img src="<%=@favorite.comment%>" class="card-img img-thumbnail img-fluid rounded-circle" alt=""/>
+  <h2 class="card-title text-info">
+    "<%=@favorite.strain%>"
+  </h2>
+  </div>
+</section>

@@ -4,7 +4,7 @@
 <%= form_for @favorite, method: :put do |f| %>
 <p>
 <%=f.text_field :strain, value: @favorite.strain, class: "form-control"%><br>
-<%=f.text_area :content, value: @favorite.comment, class: "form-control"%><br>
+<%=f.text_area :comment, value: @favorite.comment, class: "form-control"%><br>
 
 <%=f.submit "Submit"%>
 </p>

@@ -1,17 +1,30 @@
 <h1>Your Favorites</h1>
 <div class="container">
   <div class="row bg-white">
-    <%@favorites.each do |el|%>
-      <div class="col-6">
+    <%@favorites.reverse.each do |el|%>
+      <div class="col-4">
         <p><%=el.strain%></p>
       </div>
-      <div class="col-6">
+      <div class="col-4">
         <p><%=el.comment%></p>
       </div>
+
+      <section class="card bg-secondary w-50 mb-3 border-danger">
+        <div class="card-body">
+        <img src="<%=el.comment%>" class="card-img img-thumbnail img-fluid rounded-circle" alt="<%=el.comment%>"/>
+        <h2 class="card-title text-info">
+          "<%=el.strain%>"
+        </h2>
+        <!-- <button class="btn btn-lg btn-warning"><a href="${seed.url}" target="_blank">${seed.name} Info
+        </a></button> -->
+        </div>
+      </section>
+
+      <div class="container col-4 bg-warning">
+      <button class="btn btn-lg btn-secondary" type="button" name="button"><%= link_to 'Edit Fav', edit_favorite_path(el.id) %></button>
+      <button class="btn btn-lg btn-danger" type="button" name="button"><%= link_to 'Delete Fav', favorite_path(el.id), method: :delete %></button>
+      </div>
     <%end%>
+
   </div>
-</div>
-<div class="container bg-warning">
-<button class="btn btn-lg btn-secondary" type="button" name="button"><%= link_to 'Edit Fav', edit_favorite_path(current_user.id) %></button>
-<button class="btn btn-lg btn-danger" type="button" name="button"><%= link_to 'Delete Fav', favorite_path(current_user.id), method: :delete %></button>
 </div>

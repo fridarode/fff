@@ -27,11 +27,10 @@ class FavoritesController < ApplicationController
   end
 
   def edit
-    @favorite = Favorite.new
+    @favorite = Favorite.find(params[:id])
   end
 
   def update
-    @favorite.user_id = current_user.id
     @favorite = Favorite.find(params[:id])
     @favorite.update(fav_params)
     redirect_to favorite_path(@favorite)
