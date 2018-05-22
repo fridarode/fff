@@ -16,6 +16,16 @@
         <div class="container ">
           <img class="navbar-brand img-thumbnail rounded-circle border-danger" src="https://www.cannabisreports.com/images/strains/3/full_39c653b396a61321bc7127c3f89b40eb23cd771a.jpg"  alt="Weed!">
           <div class="navbar-nav d-inline nav-expand">
+
+            <!-- <div class="dropdown">
+             <button class="btn btn-lg dropdown-toggle btn-danger" data-toggle = "dropdown" type="button">Local Shops</button>
+             <div class="dropdown-menu">
+               <div class='dropdown-header  text-center text-danger'>See Local Menu's</div>
+                <a class="dropdown-item" href="https://keystoneshops.com/locations/devon/" target="_blank">Devon</a>
+               <a class="dropdown-item"  href="https://www.terravidahc.com/abington-menu/" target="_blank">Abington</a>
+              </div>
+            </div> -->
+
            <button class="btn btn-lg bg-white btn-outline-dark" type="button" name="button"><%=link_to "Main Page", favorites_path%></button>
            <button class="btn btn-lg bg-success btn-outline-dark" type="button" name="button"><%=link_to "New Favorite", new_favorite_path%></button>
            <button class="btn btn-lg bg-warning btn-outline-dark" type="button" name="button"><%=link_to "See Favorites", user_path(current_user)%></button>
@@ -23,14 +33,16 @@
         </div>
 
          <div class="container bg-primary">
-           <div class="dropdown">
-            <button class="btn btn-lg dropdown-toggle btn-danger" type="button">Local Shops</button>
-            <div class="dropdown-menu">
-              <div class='dropdown-header  text-center text-danger'>See Local Menu's</div>
-               <a class="dropdown-item" href="https://keystoneshops.com/locations/devon/" target="_blank">Devon</a>
-              <a class="dropdown-item"  href="https://www.terravidahc.com/abington-menu/" target="_blank">Abington</a>
-             </div>
+          <div class="row">
+            <div class="dropdown">
+              <button class="btn btn-lg dropdown-toggle btn-danger" data-toggle = "dropdown" type="button">Local Shops</button>
+              <div class="dropdown-menu">
+                <div class='dropdown-header  text-center text-danger'>See Local Menu's</div>
+                 <a class="dropdown-item nav-link" href="https://keystoneshops.com/locations/devon/" target="_blank">Devon</a>
+                <a class="dropdown-item nav-link"  href="https://www.terravidahc.com/abington-menu/" target="_blank">Abington</a>
+              </div>
            </div>
+          </div>
          </div>
          <!-- dropdown-menu -->
         </div>
@@ -56,24 +68,24 @@
 
                 dataArr.forEach( function(seed) {
                     let freshy =`
-                    <section class="card bg-danger w-50 mb-3 border-white" >
+                    <section class="card bg-danger w-50 my-5 mx-5 border-white text-center" >
                       <div class="card-body">
-                      <img src="${seed.image}" class="card-img img-thumbnail img-fluid rounded-circle border-danger" alt="Weed!"/>
-                      <h2 class="card-title text-primary">
+                      <h2 class="card-title text-primary bg-dark text-center display-4">
                         "${seed.name}"
                       </h2>
+                      <img src="${seed.image}" class="card-img img-thumbnail rounded-circle border-danger" alt="Weed!"/>
 
-                      <form  action="/favorites" method="post">
-                      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
-                        <input class="form-control" type="hidden" name="favorite[strain]" value="${seed.name}">
-                        </input>
-                        <input class="form-control" type="hidden" name="favorite[comment]" value="${seed.image}">
-                        </input>
-                          <button class="btn btn-lg btn-success active" type="submit">Save with hidden field</button>
-                      </form>
+                        <form class="text-center" action="/favorites" method="post">
+                          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+                          <input class="form-control" type="hidden" name="favorite[strain]" value="${seed.name}">
+                          </input>
+                          <input class="form-control" type="hidden" name="favorite[comment]" value="${seed.image}">
+                          </input>
+                            <button class="btn btn-lg btn-success active" type="submit">Save this Freshy!</button>
+                          </form>
 
-                      <button class="btn btn-lg btn-warning"><a href="${seed.url}" target="_blank">${seed.name} Info
-                      </a></button>
+                        <button class="btn btn-lg btn-warning"><a href="${seed.url}" target="_blank">${seed.name} Info
+                        </a></button>
 
                       </div>
                     </section>
