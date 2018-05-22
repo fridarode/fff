@@ -17,31 +17,34 @@
           <img class="navbar-brand img-thumbnail rounded-circle border-danger" src="https://www.cannabisreports.com/images/strains/3/full_39c653b396a61321bc7127c3f89b40eb23cd771a.jpg"  alt="Weed!">
           <div class="navbar-nav d-inline nav-expand">
 
-            <!-- <div class="dropdown">
-             <button class="btn btn-lg dropdown-toggle btn-danger" data-toggle = "dropdown" type="button">Local Shops</button>
-             <div class="dropdown-menu">
-               <div class='dropdown-header  text-center text-danger'>See Local Menu's</div>
-                <a class="dropdown-item" href="https://keystoneshops.com/locations/devon/" target="_blank">Devon</a>
-               <a class="dropdown-item"  href="https://www.terravidahc.com/abington-menu/" target="_blank">Abington</a>
-              </div>
-            </div> -->
-
            <button class="btn btn-lg bg-white btn-outline-dark" type="button" name="button"><%=link_to "Main Page", favorites_path%></button>
            <button class="btn btn-lg bg-success btn-outline-dark" type="button" name="button"><%=link_to "New Favorite", new_favorite_path%></button>
            <button class="btn btn-lg bg-warning btn-outline-dark" type="button" name="button"><%=link_to "See Favorites", user_path(current_user)%></button>
            <button class="btn btn-lg bg-danger btn-outline-dark" type="button" name="button"><%=link_to 'SIGN OUT', destroy_user_session_path, method: :delete%></button>
         </div>
 
+
          <div class="container bg-primary">
           <div class="row">
-            <div class="dropdown">
-              <button class="btn btn-lg dropdown-toggle btn-danger" data-toggle = "dropdown" type="button">Local Shops</button>
-              <div class="dropdown-menu">
-                <div class='dropdown-header  text-center text-danger'>See Local Menu's</div>
-                 <a class="dropdown-item nav-link" href="https://keystoneshops.com/locations/devon/" target="_blank">Devon</a>
-                <a class="dropdown-item nav-link"  href="https://www.terravidahc.com/abington-menu/" target="_blank">Abington</a>
+            <div class="dropdown col-4">
+              <button class="btn btn-lg dropdown-toggle btn-danger" data-toggle = "dropdown" type="button">Local Dispenaries</button>
+              <div id=""class="dropdown-menu bg-primary">
+                <!-- <div class='dropdown-header  text-center text-danger'>Select Dispenary</div> -->
+                <a class="dropdown-item nav-link bg-danger"  href="https://www.pa.gov/guides/pennsylvania-medical-marijuana-program/#Dispensaries" target="_blank">Local Dispensaries</a>
+                 <a class="dropdown-item nav-link bg-white" href="https://keystoneshops.com" target="_blank">Keystone Shops</a>
+                <a class="dropdown-item nav-link bg-warning"  href="https://www.terravidahc.com" target="_blank">Terravida Holistic Centers</a>
               </div>
            </div>
+           <div class="dropdown">
+             <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Resources
+             </button>
+               <div class="dropdown-menu bg-primary" aria-labelledby="dropdownMenuButton">
+               <a class="dropdown-item bg-danger" href="https://medicalmarijuanapa.net/resources-medical-marijuana-pennsylvania/">PAMM</a>
+               <a class="dropdown-item bg-white" href="http://www.crescoyeltrah.com/">Cresco</a>
+               <a class="dropdown-item bg-warning" href="http://www.moxie710.com/">Moxie</a>
+               </div>
+            </div>
           </div>
          </div>
          <!-- dropdown-menu -->
@@ -66,14 +69,18 @@
              dataArr = data.data;
              console.log(dataArr);
 
-                dataArr.forEach( function(seed) {
+                dataArr.reverse().forEach( function(seed) {
+                  let imageUrl = seed.image;
+                  if (seed.image === "https://www.cannabisreports.com/images/strains/no_image.png") {
+                    imageUrl = "https://www.cannabisreports.com/images/strains/3/full_39c653b396a61321bc7127c3f89b40eb23cd771a.jpg";
+                  }
                     let freshy =`
                     <section class="card bg-danger w-50 my-5 mx-5 border-white text-center" >
                       <div class="card-body">
                       <h2 class="card-title text-primary bg-dark text-center display-4">
                         "${seed.name}"
                       </h2>
-                      <img src="${seed.image}" class="card-img img-thumbnail rounded-circle border-danger" alt="Weed!"/>
+                      <img src="${imageUrl}" class="card-img img-thumbnail rounded-circle border-danger" alt="Weed!"/>
 
                         <form class="text-center" action="/favorites" method="post">
                           <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
@@ -90,7 +97,9 @@
                       </div>
                     </section>
                     `;
-
+                    // if (seed.image === "https://www.cannabisreports.com/images/strains/no_image.png") {
+                    //   seed.image = "https://www.cannabisreports.com/images/strains/3/full_39c653b396a61321bc7127c3f89b40eb23cd771a.jpg";
+                    // }
                  $('.list').append(freshy);
                 })
            })
@@ -102,5 +111,8 @@
        <p class="alert"><%= alert %></p>
     <%= yield %>
     </div>
-  </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+</body>
 </html>
