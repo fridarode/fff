@@ -1,15 +1,16 @@
-<h1>Favorites show</h1>
-<p>Showing Your Picks</p>
+<h1 class="display-4 text-center text-primary bg-warning">Favorites show</h1>
+<p class="text-primary text-center">Showing Your Picks</p>
 
 <div class="container">
-  <p><%=@favorite.strain%></p>
-  <p><%=@favorite.comment%></p>
-</div>
-<section class="card bg-secondary w-50 mb-3 border-danger">
-  <div class="card-body">
-  <img src="<%=@favorite.comment%>" class="card-img img-thumbnail img-fluid rounded-circle" alt=""/>
-  <h2 class="card-title text-info">
-    "<%=@favorite.strain%>"
-  </h2>
+  <div class="row">
+    <section class="card bg-danger w-50 my-5 mx-5 border-white ">
+      <div class="card-body">
+        <h2 class="card-title text-info bg-dark">
+          "<%=@favorite.strain%>"
+        </h2>
+        <%= image_tag @favorite.comment, class: "card-img img-thumbnail rounded-circle border-danger" %>
+        <!-- <img src="<%=@favorite.comment%>" class="card-img img-thumbnail rounded-circle border-danger" style="width: 256px;" alt="Weed!"/> -->
+      </div>
+    </section>
   </div>
-</section>
+</div>

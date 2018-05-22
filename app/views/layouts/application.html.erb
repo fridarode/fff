@@ -40,9 +40,9 @@
              Resources
              </button>
                <div class="dropdown-menu bg-primary" aria-labelledby="dropdownMenuButton">
-               <a class="dropdown-item bg-danger" href="https://medicalmarijuanapa.net/resources-medical-marijuana-pennsylvania/">PAMM</a>
-               <a class="dropdown-item bg-white" href="http://www.crescoyeltrah.com/">Cresco</a>
-               <a class="dropdown-item bg-warning" href="http://www.moxie710.com/">Moxie</a>
+               <a class="dropdown-item bg-danger" href="https://medicalmarijuanapa.net/resources-medical-marijuana-pennsylvania/" target="_blank">PAMM</a>
+               <a class="dropdown-item bg-white" href="http://www.crescoyeltrah.com/" target="_blank">Cresco</a>
+               <a class="dropdown-item bg-warning" href="http://www.moxie710.com/" target="_blank">Moxie</a>
                </div>
             </div>
           </div>
@@ -72,7 +72,7 @@
                 dataArr.reverse().forEach( function(seed) {
                   let imageUrl = seed.image;
                   if (seed.image === "https://www.cannabisreports.com/images/strains/no_image.png") {
-                    imageUrl = "https://www.cannabisreports.com/images/strains/3/full_39c653b396a61321bc7127c3f89b40eb23cd771a.jpg";
+                    imageUrl = "rainbow.jpg";
                   }
                     let freshy =`
                     <section class="card bg-danger w-50 my-5 mx-5 border-white text-center" >
@@ -80,13 +80,13 @@
                       <h2 class="card-title text-primary bg-dark text-center display-4">
                         "${seed.name}"
                       </h2>
-                      <img src="${imageUrl}" class="card-img img-thumbnail rounded-circle border-danger" alt="Weed!"/>
+                      <img src="${imageUrl}" class="card-img img-thumbnail rounded-circle border-danger" style="width: 256px;" alt="Weed!"/>
 
                         <form class="text-center" action="/favorites" method="post">
                           <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
                           <input class="form-control" type="hidden" name="favorite[strain]" value="${seed.name}">
                           </input>
-                          <input class="form-control" type="hidden" name="favorite[comment]" value="${seed.image}">
+                          <input class="form-control" type="hidden" name="favorite[comment]" value="${imageUrl}">
                           </input>
                             <button class="btn btn-lg btn-success active" type="submit">Save this Freshy!</button>
                           </form>
@@ -97,9 +97,7 @@
                       </div>
                     </section>
                     `;
-                    // if (seed.image === "https://www.cannabisreports.com/images/strains/no_image.png") {
-                    //   seed.image = "https://www.cannabisreports.com/images/strains/3/full_39c653b396a61321bc7127c3f89b40eb23cd771a.jpg";
-                    // }
+
                  $('.list').append(freshy);
                 })
            })
