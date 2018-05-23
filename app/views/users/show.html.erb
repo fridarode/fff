@@ -7,8 +7,7 @@
           <h2 class="card-title text-info bg-dark">
             "<%=el.strain%>"
           </h2>
-
-          <img src="../<%=el.comment%>" class="card-img img-thumbnail rounded-circle border-danger" style="width: 256px;" alt="<%=el.comment%>"/>
+            <%= image_tag el.comment, class: "card-img img-thumbnail rounded-circle border-danger" %>
         </div>
       </section>
 
