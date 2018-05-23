@@ -1,7 +1,7 @@
 <h1 class="display-3 text-center  mb-5 bg-danger text-warning">Frida's Freshy Favorites</h1>
 <header class="jumbotron bg-info">
-  <p class="text-center text-light">Search local menus, then use sidebar to search stains available.  Save your favorite choices.</p>
-  <p class="text-center text-light">This site is ultimately trying to give user the ability to search Strain names like the great Leafly app and mixin the ability to view daily local dispenaries selections menus. Then save your shopping list in Favorites with a comment.</p>
+  <p class="text-center text-light">This App is ultimately trying to give user the ability to search Strain names like the great <a class="text-danger font=weight-bold" href="https://www.leafly.com/">Leafly</a>  app and mixin the ability to view daily local dispenaries selections menus. Then save your shopping list in Favorites with a comment.</p>
+  <p class="text-center text-light">Ideally this App will display the physical and mental effects of each strain and help user choose the best strains for use.</p>
   <p class="text-center">Everyone is born with natural Cannabinoid <a class="text-danger" href="https://www.ncbi.nlm.nih.gov/m/pubmed/9472392/" target="_blank">Brain</a> receptors.</p>
 </header>
   <div class="form container bg-secondary w-25 float-right sticky-top">
@@ -10,19 +10,21 @@
         <h1 class="display-1">Favorites</h1>
         <p>Add Favorite</p>
         <%=form_for :favorite, url: favorites_path, method: :post do |form| %>
-        <div class="form-group text-danger">
-          <%=form.label :strain%>
-          <%=form.text_field :strain%>
-        </div>
-        <div class="form-group text-danger">
-          <%=form.label :comment%>
-          <%=form.text_field :comment%>
+        <div class="font-weight-bold text-warning text-uppercase">
+          <div class="form-group">
+            <%=form.label :strain%>
+            <%=form.text_field :strain%>
+          </div>
+          <div class="form-group">
+            <%=form.label :comment%>
+            <%=form.text_field :comment%>
+          </div>
         </div>
         <div class="action">
           <button class="btn btn-lg btn-primary"><%=form.submit "New Favorite"%></button>
         </div>
         <%end%>
-        <button class="btn btn-sm btn-outline-warning"><%= link_to 'Back', favorites_path %></button>
+        <button class="btn btn-sm btn-warning"><%= link_to 'Back', favorites_path %></button>
        </div>
       </div>
     </div>

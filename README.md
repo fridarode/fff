@@ -1,44 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-require 'net/http/persistent'
-
-uri = URI 'http://example.com/awesome/web/service'
-
-http = Net::HTTP::Persistent.new 'my_app_name'
-
-# perform a GET
-response = http.request uri
-
-# create a POST
-post_uri = uri + 'create'
-post = Net::HTTP::Post.new post_uri.path
-post.set_form_data 'some' => 'cool data'
-
-# perform the POST, the URI is always required
-response = http.request post_uri, post
-
-# if you are done making http requests, or won't make requests for several
-# minutes
-http.shutdown
+This App's purpose is to provide the user a way to search marijuana strains and save their picks in the Favorites table in the database. Ideally the API resource would have info on the strains physical and mental effects.
+To use the App an User signs in to create an account or logs in on the home user#index page with an email and password. That directs  them to the favorites#index where a list of strains appear generated from the Otreeba API. This displays the strain name and picture with links to more info and a save button. Once saved the user is directed to the favorites#show that displays that favorite.
+Then by using the Navbar menu by clicking on 'See Favorites' the user is directed to the users#show page that diplays all yheir favorites with links to edit or delete each one.

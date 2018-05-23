@@ -7,14 +7,14 @@
           <h2 class="card-title text-info bg-dark">
             "<%=el.strain%>"
           </h2>
-          <%= image_tag el.comment, class: "card-img img-thumbnail rounded-circle border-danger" %>
-          <!-- <img src="../<%=el.comment%>" class="card-img img-thumbnail rounded-circle border-danger" style="width: 256px;" alt="<%=el.comment%>"/> -->
+
+          <img src="../<%=el.comment%>" class="card-img img-thumbnail rounded-circle border-danger" style="width: 256px;" alt="<%=el.comment%>"/>
         </div>
       </section>
 
-      <div class="container col-4 bg-warning text-center align-items-center">
-        <div class="row">
-          <button class="btn btn-lg btn-secondary" type="button" name="button"><%= link_to 'Edit Fav', edit_favorite_path(el.id) %></button>
+      <div class="container col-4 bg-warning text-center align-items-center border-dark">
+        <div class="row mt-5">
+          <button class="btn btn-lg btn-secondary mx-5" type="button" name="button"><%= link_to 'Edit Fav', edit_favorite_path(el.id) %></button>
           <button class="btn btn-lg btn-danger" type="button" name="button"><%= link_to 'Delete Fav', favorite_path(el.id), method: :delete %></button>
 
         </div>
