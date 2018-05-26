@@ -17,12 +17,12 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'mini_racer', platforms: :ruby
 gem 'devise'
 gem 'pry-rails'
-# gem 'rest-client'
-#
-# gem 'mime-types'
-# gem 'netrc'
-# gem 'http-accept'
-# gem 'http-cookie'
+gem 'rest-client'
+
+gem 'mime-types'
+gem 'netrc'
+gem 'http-accept'
+gem 'http-cookie'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
