@@ -1,15 +1,27 @@
 <h1 class="display-3 text-center  mb-5 bg-danger text-warning">Frida's Freshy Favorites</h1>
 <header class="jumbotron bg-info">
-  <p class="text-center text-light">This App is ultimately trying to give user the ability to search Strain names like the great <a class="text-danger font=weight-bold" href="https://www.leafly.com/">Leafly</a>  app and mixin the ability to view daily local dispenaries selections menus. Then save your shopping list in Favorites with a comment.</p>
+  <p class="text-center text-light">This App is ultimately trying to give user the ability to search Strain names like the great <a class="text-danger font=weight-bold" href="https://www.leafly.com/">Leafly</a>  app and mixin the ability to view daily local dispenaries selections menus. Then save your shopping list in Favorites.</p>
   <p class="text-center text-light">Ideally this App will display the physical and mental effects of each strain and help user choose the best strains for use.</p>
   <p class="text-center">Everyone is born with natural Cannabinoid <a class="text-danger" href="https://www.ncbi.nlm.nih.gov/m/pubmed/9472392/" target="_blank">Brain</a> receptors.</p>
 </header>
   <div class="form container bg-secondary w-25 float-right sticky-top">
     <div class="row">
-      <div class="new-form col-4 ">
-        <h1 class="display-1">Favorites</h1>
-        <p>Add Favorite</p>
-        <%=form_for :favorite, url: favorites_path, method: :post do |form| %>
+      <div class="dropdown col-4">
+        <button class="btn btn-lg dropdown-toggle btn-danger" data-toggle = "dropdown" type="button">Local Dispenaries</button>
+        <div id=""class="dropdown-menu bg-primary">
+          <!-- <div class='dropdown-header  text-center text-danger'>Select Dispenary</div> -->
+          <a class="dropdown-item nav-link bg-danger"  href="https://www.pa.gov/guides/pennsylvania-medical-marijuana-program/#Dispensaries" target="_blank">Local Dispensaries</a>
+           <a class="dropdown-item nav-link bg-white" href="https://keystoneshops.com" target="_blank">Keystone Shops</a>
+          <a class="dropdown-item nav-link bg-warning"  href="https://www.terravidahc.com" target="_blank">Terravida Holistic Centers</a>
+        </div>
+     </div>
+   </div>
+  </div>
+
+      <!-- <div class="new-form col-4 "> -->
+        <!-- <h1 class="display-4">Check Local Menu's</h1> -->
+
+        <!-- <%=form_for :favorite, url: favorites_path, method: :post do |form| %>
         <div class="font-weight-bold text-warning text-uppercase">
           <div class="form-group">
             <%=form.label :strain%>
@@ -22,13 +34,14 @@
         </div>
         <div class="action">
           <button class="btn btn-lg btn-primary"></button>
-          <!-- <%=form.submit "New Favorite"%> -->
+          <%=form.submit "New Favorite"%>
         </div>
-        <%end%>
-        <button class="btn btn-sm btn-warning"><%= link_to 'Back', favorites_path %></button>
-       </div>
-      </div>
-    </div>
+        <%end%> -->
+        <!-- <div class="container bg-primary">
+         <div class="row"> -->
+
+
+
 
     <div class="list container w-75 rounded  bg-success">
       <div  class="row">

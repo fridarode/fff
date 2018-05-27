@@ -18,7 +18,7 @@
           <div class="navbar-nav d-inline nav-expand">
 
            <button class="btn btn-lg bg-white btn-outline-dark" type="button" name="button"><%=link_to "Main Page", favorites_path%></button>
-           <button class="btn btn-lg bg-success btn-outline-dark" type="button" name="button"><%=link_to "New Favorite", new_favorite_path%></button>
+           <button class="btn btn-lg bg-success btn-outline-dark" type="button" name="button"><%=link_to "New Favorite", favorite_path(current_user)%></button>
            <button class="btn btn-lg bg-warning btn-outline-dark" type="button" name="button"><%=link_to "See Favorites", user_path(current_user)%></button>
            <button class="btn btn-lg bg-danger btn-outline-dark" type="button" name="button"><%=link_to 'SIGN OUT', destroy_user_session_path, method: :delete%></button>
         </div>
@@ -112,7 +112,9 @@
     <div class="container">
       <div class="row">
         <div class="col-6">
-          <footer class="my-5 text-danger bg-warning text-center"><p >This site is currently for legal medical marijuana card holders but soon recreational use will be nationwide.</p></footer>
+          <footer class="my-5 text-danger bg-warning text-center"><p >This site is currently for legal medical marijuana card holders but soon recreational use will be nationwide.</p><br>
+            <button class="btn btn-lg bg-dark"><%= link_to 'Back to the Future', favorites_path %></button>
+         </footer>
       </div>
       </div>
     </div>
